@@ -3,16 +3,15 @@ import { RoadLogistics } from "./logistics/RoadLogistics";
 import { SeaLogistics } from "./logistics/SeaLogistics";
 import { LOGISTICS_TYPE } from "./config";
 
-function getLogistics(): Logistics {
-  if (LOGISTICS_TYPE === "sea") {
-    return new SeaLogistics();
-  } else if (LOGISTICS_TYPE === "road") {
-    return new RoadLogistics();
-  } else {
-    throw new Error("Invalid logistics type");
+const logistics = ((): Logistics => {
+  switch (LOGISTICS_TYPE) {
+    case "sea":
+      return new SeaLogistics();
+    case "road":
+      return new RoadLogistics();
+    default:
+      throw new Error(`Unknown logistics type: ${LOGISTICS_TYPE}`);
   }
-}
-
-const logistics = getLogistics();
+})();
 
 logistics.planDelivery();

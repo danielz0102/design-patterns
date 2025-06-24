@@ -1,4 +1,4 @@
 export interface Transport {
-  deliver(): Promise<void>;
-  load(): Promise<void>;
+  deliver(): void;
+  load(): void;
 }

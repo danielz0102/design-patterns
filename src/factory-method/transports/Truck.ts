@@ -3,7 +3,7 @@ import type { Transport } from "../types";
 export class Truck implements Transport {
   private loaded: boolean = false;
 
-  async deliver() {
+  deliver() {
     if (!this.loaded) {
       console.log("Truck is not loaded. Cannot deliver.");
       return;
@@ -12,7 +12,7 @@ export class Truck implements Transport {
     console.log("Delivering by road in a truck.");
   }
 
-  async load() {
+  load() {
     this.loaded = true;
     console.log("Truck is loaded and ready for delivery.");
   }
