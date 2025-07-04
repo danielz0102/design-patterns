@@ -15,13 +15,32 @@ importers:
       '@types/node':
         specifier: ^24.0.3
         version: 24.0.3
+      '@types/xml2js':
+        specifier: ^0.4.14
+        version: 0.4.14
       tsx:
         specifier: ^4.20.3
         version: 4.20.3
 
   src/abstractFactory: {}
 
+  src/creational/abstract-factory: {}
+
+  src/creational/builder: {}
+
+  src/creational/factory-method: {}
+
+  src/creational/prototype: {}
+
+  src/creational/singleton: {}
+
   src/factoryMethod: {}
+
+  src/structural/adapter:
+    dependencies:
+      xml2js:
+        specifier: ^0.6.2
+        version: 0.6.2
 
 packages:
 
@@ -178,6 +197,9 @@ packages:
   '@types/node@24.0.3':
     resolution: {integrity: sha512-R4I/kzCYAdRLzfiCabn9hxWfbuHS573x+r0dJMkkzThEa7pbrcDWK+9zu3e7aBOouf+rQAciqPFMnxwr0aWgKg==}
 
+  '@types/xml2js@0.4.14':
+    resolution: {integrity: sha512-4YnrRemBShWRO2QjvUin8ESA41rH+9nQGLUGZV/1IDhi3SL9OhdpNC/MrulTWuptXKwhx/aDxE7toV0f/ypIXQ==}
+
   dotenv@16.5.0:
     resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
     engines: {node: '>=12'}
@@ -198,6 +220,9 @@ packages:
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
 
+  sax@1.4.1:
+    resolution: {integrity: sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==}
+
   tsx@4.20.3:
     resolution: {integrity: sha512-qjbnuR9Tr+FJOMBqJCW5ehvIo/buZq7vH7qD7JziU98h6l3qGy0a/yPFjwO+y0/T7GFpNgNAvEcPPVfyT8rrPQ==}
     engines: {node: '>=18.0.0'}
@@ -205,6 +230,14 @@ packages:
 
   undici-types@7.8.0:
     resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
+
+  xml2js@0.6.2:
+    resolution: {integrity: sha512-T4rieHaC1EXcES0Kxxj4JWgaUQHDk+qwHcYOCFHfiwKz7tOVPLq7Hjq9dM1WCMhylqMEfP7hMcOIChvotiZegA==}
+    engines: {node: '>=4.0.0'}
+
+  xmlbuilder@11.0.1:
+    resolution: {integrity: sha512-fDlsI/kFEx7gLvbecc0/ohLG50fugQp8ryHzMTuW9vSa1GJ0XYWKnhsUx7oie3G98+r56aTQIUB4kht42R3JvA==}
+    engines: {node: '>=4.0'}
 
 snapshots:
 
@@ -287,6 +320,10 @@ snapshots:
     dependencies:
       undici-types: 7.8.0
 
+  '@types/xml2js@0.4.14':
+    dependencies:
+      '@types/node': 24.0.3
+
   dotenv@16.5.0: {}
 
   esbuild@0.25.5:
@@ -326,6 +363,8 @@ snapshots:
 
   resolve-pkg-maps@1.0.0: {}
 
+  sax@1.4.1: {}
+
   tsx@4.20.3:
     dependencies:
       esbuild: 0.25.5
@@ -334,3 +373,10 @@ snapshots:
       fsevents: 2.3.3
 
   undici-types@7.8.0: {}
+
+  xml2js@0.6.2:
+    dependencies:
+      sax: 1.4.1
+      xmlbuilder: 11.0.1
+
+  xmlbuilder@11.0.1: {}
