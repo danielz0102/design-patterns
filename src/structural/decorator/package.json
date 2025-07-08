@@ -1,5 +1,5 @@
 {
-  "name": "adapter",
+  "name": "decorator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,11 +10,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.12.1",
-  "dependencies": {
-    "xml2js": "^0.6.2"
-  },
-  "devDependencies": {
-    "@types/xml2js": "^0.4.14"
-  }
+  "packageManager": "pnpm@10.12.1"
 }
