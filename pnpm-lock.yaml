@@ -15,14 +15,9 @@ importers:
       '@types/node':
         specifier: ^24.0.3
         version: 24.0.3
-      '@types/xml2js':
-        specifier: ^0.4.14
-        version: 0.4.14
       tsx:
         specifier: ^4.20.3
         version: 4.20.3
-
-  src/abstractFactory: {}
 
   src/creational/abstract-factory: {}
 
@@ -34,13 +29,21 @@ importers:
 
   src/creational/singleton: {}
 
-  src/factoryMethod: {}
-
   src/structural/adapter:
     dependencies:
       xml2js:
         specifier: ^0.6.2
         version: 0.6.2
+    devDependencies:
+      '@types/xml2js':
+        specifier: ^0.4.14
+        version: 0.4.14
+
+  src/structural/bridge: {}
+
+  src/structural/composite: {}
+
+  src/structural/decorator: {}
 
 packages:
 
