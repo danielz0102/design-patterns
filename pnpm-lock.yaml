@@ -45,6 +45,8 @@ importers:
 
   src/structural/decorator: {}
 
+  src/structural/facade: {}
+
 packages:
 
   '@esbuild/aix-ppc64@0.25.5':
