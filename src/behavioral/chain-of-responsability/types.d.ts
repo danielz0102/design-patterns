@@ -1,15 +1,15 @@
 export interface Middleware {
-  handle(req: Request): void;
-  setNext(middleware: Middleware): Middleware;
+  handle(req: Request): void
+  setNext(middleware: Middleware): Middleware
 }
 
 export type Request = {
-  url: string;
-  user?: User;
-};
+  url: string
+  user?: User
+}
 
 export type User = {
-  id: string;
-  name: string;
-  email: string;
-};
+  id: string
+  name: string
+  email: string
+}

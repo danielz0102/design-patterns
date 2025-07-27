@@ -1,3 +1,3 @@
 export interface ExportStrategy {
-  export(file: File): Promise<void>;
+  export(file: File): Promise<void>
 }

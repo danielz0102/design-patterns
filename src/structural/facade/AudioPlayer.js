@@ -1,44 +1,44 @@
 export class AudioPlayer {
-  #audio;
-  #context;
-  #source;
-  #gainNode;
+  #audio
+  #context
+  #source
+  #gainNode
 
   constructor(audioSrc, volume = 1) {
-    this.#audio = new Audio(audioSrc);
-    this.#audio.volume = volume;
+    this.#audio = new Audio(audioSrc)
+    this.#audio.volume = volume
 
-    this.#context = new AudioContext();
-    this.#source = this.#context.createMediaElementSource(this.#audio);
-    this.#gainNode = this.#context.createGain();
+    this.#context = new AudioContext()
+    this.#source = this.#context.createMediaElementSource(this.#audio)
+    this.#gainNode = this.#context.createGain()
 
-    this.#source.connect(this.#gainNode);
-    this.#gainNode.connect(this.#context.destination);
+    this.#source.connect(this.#gainNode)
+    this.#gainNode.connect(this.#context.destination)
   }
 
   play(fadeDuration = 1000) {
-    this.#audio.currentTime = 0;
-    this.#gainNode.gain.setValueAtTime(0, this.#context.currentTime);
+    this.#audio.currentTime = 0
+    this.#gainNode.gain.setValueAtTime(0, this.#context.currentTime)
     this.#gainNode.gain.linearRampToValueAtTime(
       this.#audio.volume,
       this.#context.currentTime + fadeDuration / 1000
-    );
+    )
 
     this.#audio
       .play()
       .then(() => this.#context.resume())
-      .catch(console.error);
+      .catch(console.error)
   }
 
   stop(fadeDuration = 1000) {
     this.#gainNode.gain.linearRampToValueAtTime(
       0,
       this.#context.currentTime + fadeDuration / 1000
-    );
+    )
 
     setTimeout(() => {
-      this.#audio.pause();
-      this.#audio.currentTime = 0;
-    }, fadeDuration);
+      this.#audio.pause()
+      this.#audio.currentTime = 0
+    }, fadeDuration)
   }
 }

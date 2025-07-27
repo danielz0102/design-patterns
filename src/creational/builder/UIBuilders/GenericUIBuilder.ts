@@ -1,39 +1,39 @@
-import { UIBuilder, UI } from "../types";
+import { UIBuilder, UI } from '../types'
 
 export class GenericUIBuilder implements UIBuilder {
-  private ui: UI;
+  private ui: UI = {}
 
   constructor() {
-    this.reset();
+    this.reset()
   }
 
   setTheme(theme: string) {
-    this.ui.theme = theme;
-    return this;
+    this.ui.theme = theme
+    return this
   }
 
   setWidgets(widgets: string[]) {
-    this.ui.widgets = widgets;
-    return this;
+    this.ui.widgets = widgets
+    return this
   }
 
-  setSettings(settings: Record<string, any>) {
-    this.ui.settings = settings;
-    return this;
+  setSettings(settings: Record<string, unknown>) {
+    this.ui.settings = settings
+    return this
   }
 
   setLayout(layout: string) {
-    this.ui.layout = layout;
-    return this;
+    this.ui.layout = layout
+    return this
   }
 
   get() {
-    const ui = this.ui;
-    this.reset();
-    return ui;
+    const ui = this.ui
+    this.reset()
+    return ui
   }
 
   reset() {
-    this.ui = {};
+    this.ui = {}
   }
 }

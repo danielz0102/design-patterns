@@ -1,15 +1,15 @@
-import { EventType, HistoryEntry, Observer } from "../types";
+import { EventType, HistoryEntry, Observer } from '../types'
 
 export class FileHistory implements Observer {
-  private history: HistoryEntry[] = [];
+  private history: HistoryEntry[] = []
 
   constructor() {}
 
   update(event: EventType): void {
-    this.history.push({ event, timestamp: new Date() });
+    this.history.push({ event, timestamp: new Date() })
   }
 
   getHistory(): HistoryEntry[] {
-    return this.history;
+    return this.history
   }
 }

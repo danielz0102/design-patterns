@@ -1,5 +1,5 @@
-import { Database } from "./Database";
-import { Book, Memento, User } from "./types";
+import { Database } from './Database'
+import { Book, Memento, User } from './types'
 
 export class DBBackup implements Memento {
   constructor(
@@ -9,7 +9,7 @@ export class DBBackup implements Memento {
   ) {}
 
   restore(): void {
-    this.db.setUsers(this.users);
-    this.db.setBooks(this.books);
+    this.db.setUsers(this.users)
+    this.db.setBooks(this.books)
   }
 }

@@ -1,4 +1,4 @@
-import { Item } from "./types";
+import { Item } from './types'
 
 export class PaymentService {
   constructor(private item: Item) {}
@@ -8,9 +8,9 @@ export class PaymentService {
       `Processing payment for ${
         this.item.name
       } with price $${this.item.getPrice()}...`
-    );
+    )
     setTimeout(() => {
-      console.log("Payment completed successfully");
-    }, 1000);
+      console.log('Payment completed successfully')
+    }, 1000)
   }
 }

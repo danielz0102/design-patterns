@@ -1,4 +1,4 @@
 export interface Transport {
-  deliver(): void;
-  load(): void;
+  deliver(): void
+  load(): void
 }

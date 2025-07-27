@@ -1,3 +1,3 @@
-import "dotenv/config";
+import 'dotenv/config'
 
-export const { FURNITURE_TYPE = "modern" } = process.env;
+export const { FURNITURE_TYPE = 'modern' } = process.env

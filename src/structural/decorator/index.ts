@@ -1,29 +1,29 @@
-import { EmailNotifier } from "./EmailNotifier";
+import { EmailNotifier } from './EmailNotifier'
 
-import { SlackDecorator } from "./decorators/SlackDecorator";
-import { SMSDecorator } from "./decorators/SMSDecorator";
-import { WhatsappDecorator } from "./decorators/WhatsappDecorator";
+import { SlackDecorator } from './decorators/SlackDecorator'
+import { SMSDecorator } from './decorators/SMSDecorator'
+import { WhatsappDecorator } from './decorators/WhatsappDecorator'
 
-import { WHATSAPP_ACTIVE, SLACK_ACTIVE, SMS_ACTIVE } from "./config";
-import { App } from "./App";
+import { WHATSAPP_ACTIVE, SLACK_ACTIVE, SMS_ACTIVE } from './config'
+import { App } from './App'
 
 const notifier = (() => {
-  let baseNotifier = new EmailNotifier();
+  let baseNotifier = new EmailNotifier()
 
   if (SLACK_ACTIVE) {
-    baseNotifier = new SlackDecorator(baseNotifier);
+    baseNotifier = new SlackDecorator(baseNotifier)
   }
 
   if (SMS_ACTIVE) {
-    baseNotifier = new SMSDecorator(baseNotifier);
+    baseNotifier = new SMSDecorator(baseNotifier)
   }
 
   if (WHATSAPP_ACTIVE) {
-    baseNotifier = new WhatsappDecorator(baseNotifier);
+    baseNotifier = new WhatsappDecorator(baseNotifier)
   }
 
-  return baseNotifier;
-})();
+  return baseNotifier
+})()
 
-const app = new App(notifier);
-app.changePassword("oldPassword123", "newPassword456");
+const app = new App(notifier)
+app.changePassword('oldPassword123', 'newPassword456')

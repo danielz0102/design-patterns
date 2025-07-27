@@ -1,12 +1,12 @@
-import { NotifierDecorator } from "./NotifierDecorator";
+import { NotifierDecorator } from './NotifierDecorator'
 
 export class WhatsappDecorator extends NotifierDecorator {
   send(message: string): void {
-    super.send(message);
-    this.sendWhatsapp(message);
+    super.send(message)
+    this.sendWhatsapp(message)
   }
 
   private sendWhatsapp(message: string): void {
-    console.log(`[WhatsApp]: ${message}`);
+    console.log(`[WhatsApp]: ${message}`)
   }
 }

@@ -1,11 +1,11 @@
-import { Chair } from "../types";
+import { Chair } from '../types'
 
 export class ModernChair implements Chair {
   hasLegs(): boolean {
-    return false;
+    return false
   }
 
   sitOn(): void {
-    console.log("Sitting on a modern chair.");
+    console.log('Sitting on a modern chair.')
   }
 }

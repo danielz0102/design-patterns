@@ -1,20 +1,20 @@
 export interface Memento {
-  restore(): void;
+  restore(): void
 }
 
 export interface Originator {
-  save(): Memento;
+  save(): Memento
 }
 
 export type User = {
-  id: number;
-  name: string;
-  email: string;
-};
+  id: number
+  name: string
+  email: string
+}
 
 export type Book = {
-  id: number;
-  title: string;
-  owner: User;
-  publishedYear: number;
-};
+  id: number
+  title: string
+  owner: User
+  publishedYear: number
+}

@@ -1,11 +1,11 @@
-import { Sofa } from "../types";
+import { Sofa } from '../types'
 
 export class VictorianSofa implements Sofa {
   hasLegs(): boolean {
-    return true;
+    return true
   }
 
   lieOn(): void {
-    console.log("Lying on a Victorian sofa.");
+    console.log('Lying on a Victorian sofa.')
   }
 }

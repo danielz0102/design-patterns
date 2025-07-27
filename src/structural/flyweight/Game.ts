@@ -1,9 +1,9 @@
-import { ModelFactory } from "./ModelFactory";
-import { Player } from "./Player";
+import { ModelFactory } from './ModelFactory'
+import { Player } from './Player'
 
 export class Game {
-  private players: Player[] = [];
-  private modelFactory: ModelFactory = new ModelFactory();
+  private players: Player[] = []
+  private modelFactory: ModelFactory = new ModelFactory()
 
   addPlayer(
     texture: string,
@@ -12,21 +12,21 @@ export class Game {
     y: number,
     z: number
   ): void {
-    const model = this.modelFactory.get(texture, mesh);
-    const player = new Player(model, x, y, z);
-    this.players.push(player);
+    const model = this.modelFactory.get(texture, mesh)
+    const player = new Player(model, x, y, z)
+    this.players.push(player)
   }
 
   init(): void {
     for (const player of this.players) {
-      player.render();
+      player.render()
     }
   }
 
   gameOver(): void {
-    console.log("Game Over");
+    console.log('Game Over')
     for (const player of this.players) {
-      player.move(0, 0, 0);
+      player.move(0, 0, 0)
     }
   }
 }

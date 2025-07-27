@@ -1,17 +1,17 @@
-import { Middleware, Request } from "../types";
+import { Middleware, Request } from '../types'
 
 export abstract class BaseMiddleware implements Middleware {
-  private nextMiddleware: Middleware | null = null;
+  private nextMiddleware: Middleware | null = null
 
   handle(req: Request): void {
     if (this.nextMiddleware) {
-      this.nextMiddleware.handle(req);
+      this.nextMiddleware.handle(req)
     }
   }
 
   setNext(middleware: Middleware): Middleware {
-    this.nextMiddleware = middleware;
+    this.nextMiddleware = middleware
 
-    return this.nextMiddleware;
+    return this.nextMiddleware
   }
 }

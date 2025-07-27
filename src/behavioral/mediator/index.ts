@@ -1,27 +1,27 @@
-import { Inventory } from "./components/Inventory";
-import { Payment } from "./components/Payment";
-import { Invoice } from "./components/Invoice";
-import { Notifier } from "./components/Notifier";
-import { CheckoutMediator } from "./mediators/CheckoutMediator";
-import { Item } from "./types";
+import { Inventory } from './components/Inventory'
+import { Payment } from './components/Payment'
+import { Invoice } from './components/Invoice'
+import { Notifier } from './components/Notifier'
+import { CheckoutMediator } from './mediators/CheckoutMediator'
+import { Item } from './types'
 
-const inventory = new Inventory();
-const payment = new Payment();
-const invoice = new Invoice();
-const notifier = new Notifier();
+const inventory = new Inventory()
+const payment = new Payment()
+const invoice = new Invoice()
+const notifier = new Notifier()
 
 new CheckoutMediator({
   inventory,
   payment,
   invoice,
-  notifier,
-});
+  notifier
+})
 
 const videogame: Item = {
   id: crypto.randomUUID(),
-  name: "Expedition 33",
+  name: 'Expedition 33',
   quantity: 1,
-  price: 50,
-};
+  price: 50
+}
 
-payment.process(videogame, true);
+payment.process(videogame, true)

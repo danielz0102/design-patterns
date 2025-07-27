@@ -1,4 +1,4 @@
 export interface Item {
-  name: string;
-  getPrice(): number;
+  name: string
+  getPrice(): number
 }

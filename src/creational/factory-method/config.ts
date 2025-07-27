@@ -1,3 +1,3 @@
-import "dotenv/config";
+import 'dotenv/config'
 
-export const { LOGISTICS_TYPE = "road" } = process.env;
+export const { LOGISTICS_TYPE = 'road' } = process.env

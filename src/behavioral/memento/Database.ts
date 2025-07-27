@@ -1,27 +1,27 @@
-import { DBBackup } from "./DBBackup";
-import { Book, Memento, Originator, User } from "./types";
+import { DBBackup } from './DBBackup'
+import { Book, Memento, Originator, User } from './types'
 
 export class Database implements Originator {
-  private users: User[] = [];
-  private books: Book[] = [];
+  private users: User[] = []
+  private books: Book[] = []
 
   setUsers(users: User[]): void {
-    this.users = users;
+    this.users = users
   }
 
   setBooks(books: Book[]): void {
-    this.books = books;
+    this.books = books
   }
 
   getUsers(): User[] {
-    return this.users;
+    return this.users
   }
 
   getBooks(): Book[] {
-    return this.books;
+    return this.books
   }
 
   save(): Memento {
-    return new DBBackup(this, this.users, this.books);
+    return new DBBackup(this, this.users, this.books)
   }
 }

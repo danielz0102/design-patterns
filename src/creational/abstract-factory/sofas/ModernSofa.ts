@@ -1,11 +1,11 @@
-import { Sofa } from "../types";
+import { Sofa } from '../types'
 
 export class ModernSofa implements Sofa {
   hasLegs(): boolean {
-    return false;
+    return false
   }
 
   lieOn(): void {
-    console.log("Lying on a modern sofa.");
+    console.log('Lying on a modern sofa.')
   }
 }

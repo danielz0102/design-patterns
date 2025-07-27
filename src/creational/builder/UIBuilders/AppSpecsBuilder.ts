@@ -1,57 +1,57 @@
-import { UIBuilder, AppSpecs } from "../types";
+import { UIBuilder, AppSpecs } from '../types'
 
 export class AppSpecsBuilder implements UIBuilder {
-  private appSpecs: AppSpecs;
+  private appSpecs: AppSpecs = []
 
   constructor() {
-    this.reset();
+    this.reset()
   }
 
   setTheme(theme: string) {
     this.appSpecs.push({
-      title: "Theme",
-      content: theme,
-    });
+      title: 'Theme',
+      content: theme
+    })
 
-    return this;
+    return this
   }
 
   setWidgets(widgets: string[]) {
     this.appSpecs.push({
-      title: "Widgets",
-      content: widgets,
-    });
+      title: 'Widgets',
+      content: widgets
+    })
 
-    return this;
+    return this
   }
 
-  setSettings(settings: Record<string, any>) {
+  setSettings(settings: Record<string, unknown>) {
     this.appSpecs.push({
-      title: "Settings",
+      title: 'Settings',
       content: Object.entries(settings).map(
         ([key, value]) => `${key}: ${value}`
-      ),
-    });
+      )
+    })
 
-    return this;
+    return this
   }
 
   setLayout(layout: string) {
     this.appSpecs.push({
-      title: "Layout",
-      content: layout,
-    });
+      title: 'Layout',
+      content: layout
+    })
 
-    return this;
+    return this
   }
 
   get(): AppSpecs {
-    const specs = this.appSpecs;
-    this.reset();
-    return specs;
+    const specs = this.appSpecs
+    this.reset()
+    return specs
   }
 
   reset() {
-    this.appSpecs = [];
+    this.appSpecs = []
   }
 }

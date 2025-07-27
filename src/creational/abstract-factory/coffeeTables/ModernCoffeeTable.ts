@@ -1,27 +1,27 @@
-import { Chair, CoffeeTable } from "../types";
+import { Chair, CoffeeTable } from '../types'
 
 export class ModernCoffeeTable implements CoffeeTable {
-  private chairs: Chair[] = [];
+  private chairs: Chair[] = []
 
   hasLegs(): boolean {
-    return false;
+    return false
   }
 
   putCoffeeOn(): void {
-    console.log("Putting coffee on a modern coffee table.");
+    console.log('Putting coffee on a modern coffee table.')
   }
 
   addChair(chair: Chair): void {
-    this.chairs.push(chair);
+    this.chairs.push(chair)
   }
 
   removeChair(chair: Chair): void {
-    if (this.chairs.length === 0) return;
+    if (this.chairs.length === 0) return
 
-    this.chairs = this.chairs.filter((c) => c !== chair);
+    this.chairs = this.chairs.filter((c) => c !== chair)
   }
 
   getChairs(): Chair[] {
-    return this.chairs;
+    return this.chairs
   }
 }

@@ -1,5 +1,5 @@
-import { BankAccount } from "./BankAccount";
-import { Command } from "./types";
+import { BankAccount } from './BankAccount'
+import { Command } from './types'
 
 export class Transaction implements Command {
   constructor(
@@ -8,17 +8,17 @@ export class Transaction implements Command {
     private amount: number
   ) {
     if (amount <= 0) {
-      throw new Error("Amount must be greater than zero");
+      throw new Error('Amount must be greater than zero')
     }
   }
 
   execute(): void {
-    this.from.withdraw(this.amount);
-    this.to.deposit(this.amount);
+    this.from.withdraw(this.amount)
+    this.to.deposit(this.amount)
   }
 
   undo(): void {
-    this.to.withdraw(this.amount);
-    this.from.deposit(this.amount);
+    this.to.withdraw(this.amount)
+    this.from.deposit(this.amount)
   }
 }

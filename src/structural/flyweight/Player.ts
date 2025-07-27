@@ -1,4 +1,4 @@
-import { Model } from "./Model";
+import { Model } from './Model'
 
 // Player stores the extrinsic state: the position (the lightest piece of data).
 // The app can instantiate millions of Players without impacting performance.
@@ -11,13 +11,13 @@ export class Player {
   ) {}
 
   render(): void {
-    this.model.render(this.x, this.y, this.z);
+    this.model.render(this.x, this.y, this.z)
   }
 
   move(x: number, y: number, z: number): void {
-    this.x = x;
-    this.y = y;
-    this.z = z;
-    this.model.render(this.x, this.y, this.z);
+    this.x = x
+    this.y = y
+    this.z = z
+    this.model.render(this.x, this.y, this.z)
   }
 }

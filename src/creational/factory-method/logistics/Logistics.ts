@@ -1,11 +1,11 @@
-import type { Transport } from "../types";
+import type { Transport } from '../types'
 
 export abstract class Logistics {
-  abstract createTransport(): Transport;
+  abstract createTransport(): Transport
 
   planDelivery() {
-    const transport = this.createTransport();
-    transport.load();
-    transport.deliver();
+    const transport = this.createTransport()
+    transport.load()
+    transport.deliver()
   }
 }

@@ -1,9 +1,12 @@
-import { Item } from "../types";
+import { Item } from '../types'
 
 export class Product implements Item {
-  constructor(public name: string, public price: number) {}
+  constructor(
+    public name: string,
+    public price: number
+  ) {}
 
   getPrice(): number {
-    return this.price;
+    return this.price
   }
 }
